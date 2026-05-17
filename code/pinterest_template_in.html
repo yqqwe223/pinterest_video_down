@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta name="msvalidate.01" content="5CCC6EE8FF816477D80A4DE459A738F1" />
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Pinterest Video Downloader: Anda dapat menggunakan pengunduh video Pinterest kami untuk mengunduh video atau GIF apa pun dan mengonversinya ke format MP3 atau GIF. Tunggu apa lagi? Coba pengunduh Pinterest kami sekarang!">
+<meta name="keywords" content="Pinterest video downloader, unduh video Pinterest, download video Pinterest">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@twittervideodownloaderx.com">
+<meta name="twitter:title" content="Pinterest Video Downloader — Unduh Video dan GIF dari Pinterest">
+<meta name="twitter:description" content="Pinterest Video Downloader: Gunakan pengunduh video Pinterest kami untuk mengunduh video atau GIF apa pun dan konversi ke MP3 atau GIF. Coba sekarang!">
+<meta name="twitter:image" content="https://twittervideodownloaderx.com/static/logo.png">
+<meta name="twitter:image:alt" content="Pinterest Video Downloader — Unduh Video dan GIF dari Pinterest">
+
+<meta property="og:title" content="Pinterest Video Downloader — Unduh Video dan GIF dari Pinterest" />
+<meta property="og:description" content="Pinterest Video Downloader: Anda dapat menggunakan pengunduh video Pinterest kami untuk mengunduh video atau GIF apa pun dan mengonversinya ke format MP3 atau GIF. Coba sekarang!" />
+<meta property="og:image" content="https://twittervideodownloaderx.com/static/logo.png" />
+<meta property="og:image:alt" content="Pinterest Video Downloader — Unduh Video dan GIF dari Pinterest" />
+
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+<link href="https://gcore.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://gcore.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/wait.css" >
+<link rel="stylesheet" href="/static/shareon.min.css" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+
+{{websiteSchema|safe}}
+<link rel="icon" href="{% static 'favicon.ico' %}">
+<title>Pinterest Video Downloader — Unduh Video dan GIF dari Pinterest</title>
+</head>
+
+
+<body>
+
+
+	
+  <style>
+    /* ================== 全局变量与重置 ================== */
+    :root {
+      --pinterest-red: #e60023;
+      --bg-light: #fafafa;
+      --text-dark: #212121;
+      --text-light: #5f6368;
+      --card-bg: #ffffff;
+      --border-color: #e0e0e0;
+      --shadow: 0 2px 10px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+		:root {
+		--pin-red:  #E60023;
+		--pin-red-dark: #BD081C;
+		--pin-gray: #F5F5F5;
+		--pin-white: #FFFFFF;
+		}
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      padding: 5px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ================== 通用样式 ================== */
+    a {
+      color: var(--pinterest-red);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.94em;
+      color: var(--pinterest-red);
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      color: var(--pinterest-red);
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+
+    .notice-box {
+      background: #fff0f2;
+      border-left: 4px solid var(--pinterest-red);
+      padding: 1.2rem;
+      margin: 1.5rem auto 2rem;
+      border-radius: 8px;
+      font-size: 0.98rem;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      color: #333;
+    }
+
+    h4 {
+      font-size: 1.15rem;
+      color: var(--pinterest-red);
+      margin: 1.4rem 0 0.8rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* ================== 布局组件 ================== */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 1.4rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    .step-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin: 1.5rem 0;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      padding: 1.3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0 1rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 2rem;
+    }
+
+        .footer {
+            background: #212529;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #FF4500;
+            text-decoration: none;
+        }
+
+
+    /* ================== 响应式断点 ================== */
+    @media (min-width: 768px) {
+      body {
+        padding: 5px;
+      }
+      h1 {
+        font-size: 2.7rem;
+      }
+      .subtitle {
+        font-size: 1.35rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        padding: 5px;
+      }
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        padding: 0 8px;
+      }
+      .notice-box {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+      .step-card, .feature-card, .faq-item {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+
+<div class="container-fluid text-break">
+<div class="row" style="background:linear-gradient(135deg,  var(--pin-red) 0%,  var(--pin-red-dark) 40%, var(--pin-gray) 100%);">
+<div class="row" >
+    <div class="col-sm-2 d-none d-sm-block" >
+    </div>
+	<div class="col-sm-4 align-self-end"  >
+		<a href='https://twittervideodownloaderx.com' style="text-decoration:none"><img  data-src='/static/logo.png' src='/static/pix.jpg' class="img-fluid lazy align-text-bottom" alt='site logo'><span  class='align-text-bottom text-wrap fs-3' style="font-style:italic;color:white;font-family:'Tektur',sans-serif;">Twittervideodownloaderx</span></a>
+    </div>
+	
+	
+	
+	<div class="col-sm-4 d-flex justify-content-end align-items-center" id="webdes">
+			<ul  style='padding-top:25px;color:white'  class="nav nav-tabs" >
+				<li style='display:inline;'><a href='https://twittervideodownloaderx.com' style='text-decoration: none;color:white'>Beranda</a>&nbsp;&nbsp;</li>
+	
+				<div class="text-end mb-3">
+					<div class="dropdown d-inline-block">
+						<button class="btn btn-sm btn-outline-light d-flex align-items-center gap-1"
+								type="button"
+								id="langDropdown"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+						<i class="fa-solid fa-video"></i>
+						<span>Pengunduh Video</span>
+						</button>
+				
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+							{{toollistele|safe}}
+						</ul>
+					</div>&nbsp;&nbsp;
+				</div>
+				
+				<div class="text-end mb-3">
+					<div class="dropdown d-inline-block">
+						<button class="btn btn-sm btn-outline-light d-flex align-items-center gap-1"
+								type="button"
+								id="langDropdown"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+						<i class="bi bi-globe"></i>
+						<span>🇮🇩 Bahasa Indonesia</span>
+						</button>
+				
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+							{{langlistele|safe}}
+						</ul>
+					</div>
+				</div>
+			</ul>
+		</div>
+	<div class="col-sm-2" id='langweb' >
+	</div>
+</div>
+<div class="row" >
+    <div class="col-md-2 d-none d-md-block">
+    </div> 
+    <div class="col-md-8"  style="border-width:1px;border-style: solid;background-color:#F5F7FA">
+	
+	
+		<br />
+		<div id='titleweb' style='text-align:center;color:#2D3E50' >
+			<h1 style='font-family: "Tektur",sans-serif;'>📌 Pinterest Downloader</h1>
+			 <p class="subtitle">Unduh video (MP4) dan gambar (JPG/PNG) dari Pin publik Pinterest secara gratis online · Kualitas HD Asli · Tanpa Login</p>
+		</div> 
+		<div id='ad' >
+		</div>
+		<div style='text-align:center'>
+		
+		<input type='text' id='mainsource' style='width:80%;display:inline;color:#2D3E50' placeholder="Masukkan tautan pinterest.com" >
+		</div>
+		<div style='text-align:center;color:#2D3E50'>
+		Contoh Url : https://www.pinterest.com/pin/1900024838647726/
+		</div>
+		<br/>
+		<div style='text-align:center'>
+		<button type="button" class="btn" id='bigbutton' style='background-color:#FF6B35;color:white'><i class="bi bi-download"></i> Unduh Video</button>
+		</div>
+		<br/>
+		
+		<div class="spinner-grow text-primary text-center" role="status" style='display:none;font-size:3em' id='loader'>
+			<span class="visually-hidden">Mengunduh...</span>
+		</div>
+		
+		<div class="" id='hashshow' style='color:#2D3E50'>
+		</div> 
+		<br />
+		
+		
+	</div>
+	<div class="col-md-2 d-none d-md-block">
+	</div>
+</div>
+<div class="row" >
+	<p>&nbsp;<span>{% csrf_token %}</span></p>
+</div>
+</div>
+
+<div class="row" style='margin-top:3em;background-color:#F5FAFB'>
+	<div class="col-sm-2 d-none d-md-block">
+	</div> 
+	<div class="col-sm-8"  >
+	
+
+
+			<div class="container">
+		
+		
+			
+			<div class="notice-box">
+				🔒 <strong>Penting:</strong> Alat ini <strong>tidak menyimpan konten</strong> dan <strong>tidak meminta izin akun Pinterest</strong>, hanya mengurai <strong>Pin publik</strong>. Mohon tidak mengunduh konten pribadi, hormati hak cipta dan hak kekayaan intelektual kreator.
+			</div>
+
+
+			<section>
+			<h2>✨ Jenis konten yang didukung</h2>
+			<div class="feature-grid">
+				<div class="feature-card">
+				<h4>🎥 Pin Video (Video Pins)</h4>
+				<p>Unduh file MP4 asli dari Pin video Pinterest, maksimal 1080P (tergantung kualitas unggahan), tanpa watermark platform.</p>
+				</div>
+				<div class="feature-card">
+				<h4>🖼️ Pin Gambar (Image Pins)</h4>
+				<p>Dapatkan gambar asli HD (JPG/PNG) dalam satu klik, mempertahankan resolusi penuh, cocok untuk mengumpulkan inspirasi, referensi desain, atau dilihat offline.</p>
+				</div>
+				<div class="feature-card">
+				<h4>🔗 Mendukung semua format tautan</h4>
+				<p>Kompatibel dengan tautan standar, tautan pendek (pin.it), tautan sematan, otomatis mengenali jenis konten dan memberikan opsi unduhan.</p>
+				</div>
+				<div class="feature-card">
+				<h4>⚡ Cepat & aman privasi</h4>
+				<p>Rata-rata 2~4 detik selesai mengurai; tidak perlu login Pinterest selama proses, tidak mengumpulkan IP atau riwayat penggunaan.</p>
+				</div>
+			</div>
+			<p><strong>✅ Didukung:</strong> Pin video & gambar dari akun publik<br>
+			<strong>❌ Tidak didukung:</strong> Papan rahasia (Secret Boards), konten akun pribadi, Pin iklan, iklan dinamis</p>
+			</section>
+
+		<section>
+			<h2>📥 Panduan penggunaan detail(selesai dalam 3 langkah)</h2>
+			<div class="step-container">
+			<div class="step-card">
+				<h4>Langkah 1: Salin tautan Pinterest Pin</h4>
+				<ol>
+				<li>Buka <a href="https://www.pinterest.com" target="_blank">situs web resmi Pinterest</a> atau aplikasi</li>
+				<li>Temukan <strong>Pin publik</strong> (video/gambar) yang ingin diunduh</li>
+				<li>Ketuk ikon <strong>"Bagikan"</strong> di kanan bawah → pilih <strong>"Salin tautan"</strong><br>
+					Contoh tautan:<br>
+					<code>https://www.pinterest.com/pin/123456789012345678/</code><br>
+					Tautan pendek:<br>
+					<code>https://pin.it/Abc123X</code>
+				</li>
+				</ol>
+				<p><strong>💡 Penting:</strong> Hanya <strong>Pin publik</strong> yang dapat diunduh. Papan rahasia atau konten terbatas tidak dapat diurai.</p>
+			</div>
+
+				<div class="step-card">
+				<h4>Langkah 2: Tempel tautan dan uraikan</h4>
+				<ol>
+					<li>Kembali ke halaman pengunduh</li>
+					<li>Tempelkan tautan yang disalin ke kotak input atas (nanti akan terintegrasi fungsi unduhan Anda)</li>
+					<li>Klik tombol <strong>【Uraikan konten】</strong></li>
+				</ol>
+				<p>Dalam hitungan detik sistem akan:<br>
+				• otomatis mengenali video atau gambar<br>
+				• mendapatkan tautan langsung media HD asli<br>
+				• menampilkan pratinjau dan opsi unduhan</p>
+				</div>
+		
+				<div class="step-card">
+				<h4>Langkah 3: Unduh konten HD</h4>
+				<ul>
+					<li><strong>Pin video:</strong> klik “Unduh MP4” untuk menyimpan video HD</li>
+					<li><strong>Pin gambar:</strong> klik “Unduh asli” untuk mendapatkan file JPG/PNG</li>
+					<li>File akan otomatis tersimpan di folder <strong>"Unduhan"</strong> perangkat</li>
+				</ul>
+				<p><strong>📌 Saran penggunaan:</strong></p>
+				<ul>
+					<li>Mengumpulkan inspirasi desain? → unduh asli untuk membangun perpustakaan lokal</li>
+					<li>Menyimpan video tutorial? → unduh MP4 untuk ditonton offline</li>
+					<li>Merencanakan konten? → simpan kasus referensi (saat ini dukungan per Pin tunggal)</li>
+				</ul>
+				</div>
+			</div>
+			</section>
+
+			<section>
+			<h2>⚙️ Keterangan teknis(untuk pengembang)</h2>
+			<ul>
+				<li>Menguraikan JSON-LD dan skrip tertanam dari halaman Pinterest publik untuk mengekstrak URL media asli.</li>
+				<li>Video dalam format MP4 standar, gambar JPG/PNG asli, <strong>tanpa watermark Pinterest atau kompresi thumbnail</strong>.</li>
+				<li>Pemrosesan otomatis pengalihan tautan pendek(<code>pin.it</code>) memastikan kompatibilitas semua format tautan.</li>
+				<li>Semua permintaan diproses melalui saluran aman, <strong>tidak mengirim informasi identitas pengguna ke Pinterest</strong>.</li>
+				<li>Tautan langsung media biasanya berlaku beberapa jam; segera unduh.</li>
+			</ul>
+			</section>
+		
+			<section>
+			<h2>⚠️ Ketentuan penggunaan & kebijakan hak cipta</h2>
+			<ol>
+				<li><strong>Konten publik saja:</strong> dilarang mencoba mengunduh papan rahasia, Pin terbatas, atau konten iklan.</li>
+				<li><strong>Hormati kekayaan intelektual:</strong> sebagian besar konten Pinterest adalah karya pihak ketiga; jangan digunakan untuk redistribusi komersial, penjualan, atau pelanggaran.</li>
+				<li><strong>Prinsip penggunaan pribadi:</strong> alat ini hanya disediakan untuk mengumpulkan inspirasi, belajar, atau hiburan pribadi; scraping otomatis atau unduhan massal dilarang.</li>
+				<li><strong>Penafian:</strong> pengguna bertanggung jawab atas semua risiko hukum akibat penggunaan yang tidak tepat; platform tidak bertanggung jawab.</li>
+			</ol>
+			</section>
+
+			<section>
+			<h2>❓ Pertanyaan umum(FAQ)</h2>
+			<div class="faq-list">
+				<div class="faq-item">
+				<strong>Q: Mengapa muncul "Tidak dapat mendapatkan konten"?</strong><br>
+				Kemungkinan: Pin pribadi, tautan tidak valid, konten telah dihapus, atau Pinterest untuk sementara membatasi akses publik.
+				</div>
+				<div class="faq-item">
+				<strong>Q: Dapatkah mengunduh seluruh papan(board)?</strong><br>
+				Versi saat ini hanya mendukung unduhan per Pin. <strong>Fitur batch sedang direncanakan.</strong>
+				</div>
+				<div class="faq-item">
+				<strong>Q: Apakah gambar yang diunduh dalam resolusi asli?</strong><br>
+				Ya! Kami menyediakan gambar asli dengan resolusi tertinggi yang tersimpan di Pinterest, bukan thumbnail.
+				</div>
+				<div class="faq-item">
+				<strong>Q: Bagaimana menyalin tautan di ponsel?</strong><br>
+				Di aplikasi Pinterest ketuk "Bagikan" → "Salin tautan". Beberapa model Android disarankan membuka Pin di Chrome terlebih dahulu.
+				</div>
+				<div class="faq-item">
+				<strong>Q: Apakah mendukung konten iklan Pinterest?</strong><br>
+				Tidak. Pin iklan biasanya memiliki pembatasan tambahan dan hak cipta yang rumit; alat ini akan melewatkannya secara otomatis.
+				</div>
+			</div>
+			</section>
+
+			<footer>
+			<p>Masalah atau saran fitur? Hubungi kami!<br>
+			📧 Email: <a href="{{mailtocontactmail}}">{{contactmail}}</a><br>
+			💻 GitHub: <a href="{{githublink}}" target="_blank">{{githublink}}</a></p>
+			<p style="margin-top: 1.2rem; font-style: italic; color: #666;">
+				Terima kasih telah menggunakan <strong>Pengunduh Pinterest</strong> ——<br>
+				agar inspirasi selalu ada di tangan. ✨
+			</p>
+			</footer>
+
+
+		<footer class="footer">
+				<p>© {{year_string}} Pinterest Video Downloader. Hak cipta dilindungi undang-undang.</p>
+				<p>Situs ini tidak memiliki afiliasi resmi dengan Pinterest, Inc. | 
+				<a href="/privacy-policy" style="color: #FF4500;">Kebijakan Privasi</a> | 
+				<a href="/terms-of-service" style="color: #FF4500;">Ketentuan Layanan</a> | 
+				<a href="/about-us" style="color: #FF4500;">Tentang Kami</a> | 
+				<a href="/contact-us" style="color: #FF4500;">Hubungi Kami</a>
+				</p>
+				<p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+					Alat ini disediakan hanya untuk tujuan studi dan riset pribadi. Pengguna bertanggung jawab penuh atas segala konsekuensi hukum yang timbul.
+				</p>
+				<p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
+					Mengunduh konten yang dilindungi hak cipta dapat melanggar hukum dan peraturan yang berlaku. Harap patuhi hukum setempat.
+				</p>
+		</footer>
+
+
+	</div>
+
+	</div>
+	<div class="col-sm-2 d-none d-md-block">
+	</div>
+</div>
+</div>
+<script src="/static/jquery.min.js"  crossorigin="anonymous"></script>
+<script src="/static/popper.min.js"  crossorigin="anonymous"></script>
+<script data-ad-client="ca-pub-3339068484857413" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="/static/jquery.lazy.min.js"></script>
+
+<script type="text/javascript" src="/static/shareon.iife.js" defer  init></script>
+<script>
+	$(function() {
+		$('.lazy').Lazy();
+	});
+</script>
+<script type="application/ld+json">
+	{
+	"@context": "http://schema.org/",
+	"@type": "Organization",
+	"url": "https://twittervideodownloaderx.com",
+	"logo": "https://twittervideodownloaderx.com/static/logo.png"
+	}
+</script>
+
+<script>
+function mp3turn(obj){
+	var inputvalue =obj.getAttribute('va');
+	//alert(inputvalue);
+	if (inputvalue==='')
+	{
+		alert('456');
+		return false;
+	}
+	$('#mp3placeholder').empty();
+	var spinner='<span style="font-size:1.5em"><span class="spinner-loader" ></span>';
+	$('#mp3placeholder').append(spinner+'<br />Converting Video to Mp3</span>');
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getmp3', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#mp3placeholder').html('NO result');
+				return;
+				}
+			var mp3filepath=response.mp3filepath;
+			//alert(htimage);
+			$('#mp3placeholder').empty();
+			var intext='';
+			var intext='<a href="/'+mp3filepath+'" target="_blank" class="btn btn-danger">Download Video Mp3</a>';
+			$('#mp3placeholder').html(intext);
+			}
+		else{
+			$('#mp3placeholder').html('<p style="font-size:1.5em">NO result</p>');
+		}
+		}
+	}
+};
+function gifturn(obj){
+	var inputvalue =obj.getAttribute('va');
+	//alert(inputvalue);
+	if (inputvalue==='')
+	{
+		alert('456');
+		return false;
+	}
+	$('#gifplaceholder').empty();
+	var spinner='<span style="font-size:1.5em"><span class="spinner-loader" ></span>';
+	$('#gifplaceholder').append(spinner+'<br />Converting Video to Gif</span>');
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getgif', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#gifplaceholder').html('NO result');
+				return;
+				}
+			var giffilepath=response.giffilepath;
+			//alert(htimage);
+			$('#gifplaceholder').empty();
+			var intext='';
+			var intext='<a href="/'+giffilepath+'" target="_blank" class="btn btn-danger">Download Video GIF</a>';
+			$('#gifplaceholder').html(intext);
+			}
+		else{
+			$('#gifplaceholder').html('<p style="font-size:1.5em">NO result</p>');
+		}
+		}
+	}
+};
+$(document).ready(function() {
+$("#mainsource").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#bigbutton").click();
+    }
+});
+$('#bigbutton').on('click',function(){
+	var inputvalue = $('#mainsource').val();
+	if (inputvalue==='')
+	{
+		return false;
+	}
+	$('#hashshow').empty();
+	var spinner='<div style="text-align:center;"><span style="font-size:1.5em;"><span style="background-color:#007FFF;" class="spinner-loader" ></span>';
+	$('#hashshow').append(spinner+'<br />Sedang mengunduh video</span></div>');
+	
+	//document.getElementById("loader").style.display = "block";
+
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getitem_pinterest', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			document.getElementById("loader").style.display = "none";
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#hashshow').html('NO result');
+				return;
+				}
+				
+				
+				
+				var v_thumbnail=encodeURI(response.v_thumbnail);//
+				
+				var v_title=response.v_title;//
+				var v_webpage_url=encodeURI(response.v_webpage_url);
+				var v_duration_string=response.v_duration_string;//
+				
+				//var v_uploader_id=response.v_uploader_id;
+				var v_uploader=response.v_uploader;//
+				//var v_uploader_url=encodeURI(response.v_uploader_url);
+				//var v_view_count=response.v_view_count;
+				//var v_like_count=response.v_like_count;
+				var v_comment_count=response.v_comment_count;
+				var v_repost_count=response.v_repost_count;
+				var v_width=response.v_width;
+				var v_height=response.v_height;
+				
+				var v_upload_date=response.v_upload_date;//
+				var v_ext=response.v_ext;
+				var v_resolution=response.v_resolution;
+				var v_aspect_ratio=response.v_aspect_ratio;
+				var v_des=response.v_des;
+				var v_url=response.v_url;
+				
+				var v_formats = response.formatslist;
+				var v_thumbnails =response.thumbnailslist;
+			
+
+			$('#hashshow').empty();
+			var intext='';
+			var intext=intext+'<div class="row" ><div class="col-sm-6" ><div><b>'+v_title+'</b></div><div><img src="'+v_thumbnail+'"  class="img-fluid" /></div>';
+			
+
+			var intext=intext+'</div><div class="col-sm-6 align-self-end" ><br /><br />';
+			
+			//var intext=intext+'<div><i class="bi bi-cloud-download"></i> <a style="text-decoration:none" href="'+v_url+'">下载视频</a></div>';
+			
+			for (let i = 0; i < v_formats.length; i++) {
+			
+				turl=encodeURI(v_formats[i][0]);
+				tres=v_formats[i][1];
+				// Terjemahan: Unduh Video (resolusi ...)
+				var intext=intext+'<div><i class="bi bi-cloud-download"></i> <a style="text-decoration:none" href="'+turl+'">Unduh Video (resolusi '+tres+')</a></div>';
+			}
+			
+			var intext=intext+'<br />'
+			for (let i = 0; i < v_thumbnails.length; i++) {
+			
+				turl=encodeURI(v_thumbnails[i][0]);
+				tres=v_thumbnails[i][1];
+				// Terjemahan: Unduh Sampul (resolusi ...)
+				var intext=intext+'<div><i class="bi bi-file-image"></i> <a style="text-decoration:none" href="'+turl+'">Unduh Sampul (resolusi '+tres+')</a></div>';
+			}
+			
+			var intext=intext+'</div></div><hr />';
+	
+			// Bagian Informasi: Judul, Tautan, Durasi, Pengunggah, Tanggal
+			var intext=intext+'<div class="row" ><div class="col-sm-6" ><div><b>Judul: </b>'+v_title+'</div><div><b>Tautan Web: </b>'+v_webpage_url+'</div><div><b>Durasi: </b>'+v_duration_string+'</div><div><b>Pengunggah: </b>'+v_uploader+'</div><div><b>Tanggal Unggah: </b>'+v_upload_date+'</div></div>';
+	
+			// Bagian Detail: Komentar, Repost, Lebar, Tinggi, Format, Resolusi, Rasio
+			var intext=intext+'<div class="col-sm-6" ><div><b>Jumlah Komentar: </b>'+v_comment_count+'</div><div><b>Jumlah Repost: </b>'+v_repost_count+'</div><div><b>Lebar: </b>'+v_width+'</div><div><b>Tinggi: </b>'+v_height+'</div><div><b>Format File: </b>'+v_ext+'</div><div><b>Resolusi: </b>'+v_resolution+'</div><div><b>Rasio Aspek: </b>'+v_aspect_ratio+'</div></div></div>';
+
+			// Deskripsi
+			var intext=intext+'<div class="row" ><div class="col-sm-12" ><div><b>Deskripsi Video: </b>'+v_des+'</div></div></div>';
+
+
+			var intext=intext+'<div class="row" >'+'<div class="shareon shadow bg-light bg-gradient"><a class="facebook" data-title="'+v_title+'" ><span  style="font-size:1em">facebook</span></a><a class="linkedin" data-title="'+v_title+'" ><span style="font-size:1em">linkedin</span></a>	<a class="mastodon" data-title="'+v_title+'"><span  style="font-size:1em">mastodon</span></a><a class="messenger" data-fb-app-id="0123456789012345" data-title="'+v_title+'"><span  style="font-size:1em">messenger</span></a><a class="pinterest" data-title="'+v_title+'"><span  style="font-size:1em“>pinterest</span></a><a class="reddit" data-title="'+v_title+'"><span  style="font-size:0.5em">reddit</span></a><a class="telegram" data-title="'+v_title+'"><span  style="font-size:1em">telegram</span></a><a class="twitter" data-title="'+v_title+'"><span  style="font-size:1em“>twitter</span></a><a class="viber" data-title="'+v_title+'"><span  style="font-size:1em">viber</span></a><a class="vkontakte" data-title="'+v_title+'"><span  style="font-size:1em">vkontakte</span></a><a class="whatsapp" data-title="'+v_title+'"><span  style="font-size:1em">whatsapp</span></a></div>';
+			
+			
+			var intext=intext+'</div>';
+			
+			//$('#hashshow').append('<div>'+'<img src="'+htsimage+'" />'+'</div>'+'<p>'+trunttext+'</p>');
+			$('#hashshow').html(intext);
+			}
+		else{
+			document.getElementById("loader").style.display = "none";
+			$('#hashshow').html('<p style="font-size:1.5em">NO result</p>');
+		}
+		}
+	}
+});
+});
+</script>
+<script>
+$(document).ready(function() {
+  $('.droplang').click(function(e) {
+    e.preventDefault();
+    var selectedValue = $(this).data('value');
+	var domainname='https://twittervideodownloaderx.com';
+	if (selectedValue==='en')
+	{
+		window.location=domainname+'/{{baseurlstring}}';
+	}
+	else
+	{
+	window.location=domainname+'/{{baseurlstring}}_'+selectedValue;
+	}
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+  $('.droptool').click(function(e) {
+    e.preventDefault();
+    var selectedtoolValue = $(this).data('value');
+	var domainname='https://twittervideodownloaderx.com';
+	var current_lang='{{lang}}';
+	
+	if (selectedtoolValue==='x_twitter')
+	{
+		if (current_lang==='en')
+			{
+			window.location=domainname;
+			}
+		else
+			{
+			window.location=domainname+'/'+current_lang;
+			}
+	}
+	else
+	{
+		if (current_lang==='en')
+		
+			{
+			window.location=domainname+'/'+selectedtoolValue+'_downloader';
+			}
+		else
+			{
+			window.location=domainname+'/'+selectedtoolValue+'_downloader_'+'{{lang}}';
+			}
+	}
+  });
+});
+</script>
+<script type="text/javascript">
+var sc_project=11698515; 
+var sc_invisible=1; 
+var sc_security="38970939"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+
+<link  rel="stylesheet" href='/static/wait.css' >
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="msvalidate.01" content="5CCC6EE8FF816477D80A4DE459A738F1" />
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Descargador de vídeos de Pinterest: Utiliza nuestra herramienta para descargar cualquier vídeo o GIF de Pinterest y convertirlo a formato MP3 o GIF. ¿A qué esperas? ¡Prueba nuestro descargador de Pinterest ahora!">
+<meta name="keywords" content="descargador de vídeos de Pinterest, descargar vídeos de Pinterest, bajar vídeos Pinterest">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@twittervideodownloaderx.com">
+<meta name="twitter:title" content="Descargador de vídeos de Pinterest — Obtén vídeos y GIFs de Pinterest">
+<meta name="twitter:description" content="Descargador de vídeos de Pinterest: Descarga cualquier vídeo o GIF y conviértelo a MP3 o GIF. ¡Prueba nuestra herramienta gratis ahora!">
+<meta name="twitter:image" content="https://twittervideodownloaderx.com/static/logo.png">
+<meta name="twitter:image:alt" content="Descargador de vídeos de Pinterest — Obtén vídeos y GIFs de Pinterest">
+
+<meta property="og:title" content="Descargador de vídeos de Pinterest — Obtén vídeos y GIFs de Pinterest" />
+<meta property="og:description" content="Descargador de vídeos de Pinterest: Utiliza nuestra herramienta para descargar cualquier vídeo o GIF de Pinterest y convertirlo a formato MP3 o GIF. ¡Pruébalo ahora!" />
+<meta property="og:image" content="https://twittervideodownloaderx.com/static/logo.png" />
+<meta property="og:image:alt" content="Descargador de vídeos de Pinterest — Obtén vídeos y GIFs de Pinterest" />
+
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+<link href="https://gcore.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://gcore.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/wait.css" >
+<link rel="stylesheet" href="/static/shareon.min.css" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+
+{{websiteSchema|safe}}
+<link rel="icon" href="{% static 'favicon.ico' %}">
+<title>Descargador de vídeos de Pinterest — Obtén vídeos y GIFs de Pinterest</title>
+</head>
+
+
+<body>
+
+
+	
+  <style>
+    /* ================== 全局变量与重置 ================== */
+    :root {
+      --pinterest-red: #e60023;
+      --bg-light: #fafafa;
+      --text-dark: #212121;
+      --text-light: #5f6368;
+      --card-bg: #ffffff;
+      --border-color: #e0e0e0;
+      --shadow: 0 2px 10px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+		:root {
+		--pin-red:  #E60023;
+		--pin-red-dark: #BD081C;
+		--pin-gray: #F5F5F5;
+		--pin-white: #FFFFFF;
+		}
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      padding: 5px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ================== 通用样式 ================== */
+    a {
+      color: var(--pinterest-red);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.94em;
+      color: var(--pinterest-red);
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      color: var(--pinterest-red);
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+
+    .notice-box {
+      background: #fff0f2;
+      border-left: 4px solid var(--pinterest-red);
+      padding: 1.2rem;
+      margin: 1.5rem auto 2rem;
+      border-radius: 8px;
+      font-size: 0.98rem;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      color: #333;
+    }
+
+    h4 {
+      font-size: 1.15rem;
+      color: var(--pinterest-red);
+      margin: 1.4rem 0 0.8rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* ================== 布局组件 ================== */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 1.4rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    .step-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin: 1.5rem 0;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      padding: 1.3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0 1rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 2rem;
+    }
+
+        .footer {
+            background: #212529;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #FF4500;
+            text-decoration: none;
+        }
+
+
+    /* ================== 响应式断点 ================== */
+    @media (min-width: 768px) {
+      body {
+        padding: 5px;
+      }
+      h1 {
+        font-size: 2.7rem;
+      }
+      .subtitle {
+        font-size: 1.35rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        padding: 5px;
+      }
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        padding: 0 8px;
+      }
+      .notice-box {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+      .step-card, .feature-card, .faq-item {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+
+<div class="container-fluid text-break">
+<div class="row" style="background:linear-gradient(135deg,  var(--pin-red) 0%,  var(--pin-red-dark) 40%, var(--pin-gray) 100%);">
+<div class="row" >
+    <div class="col-sm-2 d-none d-sm-block" >
+    </div>
+	<div class="col-sm-4 align-self-end"  >
+		<a href='https://twittervideodownloaderx.com' style="text-decoration:none"><img  data-src='/static/logo.png' src='/static/pix.jpg' class="img-fluid lazy align-text-bottom" alt='site logo'><span  class='align-text-bottom text-wrap fs-3' style="font-style:italic;color:white;font-family:'Tektur',sans-serif;">Twittervideodownloaderx</span></a>
+    </div>
+	
+	
+	
+	<div class="col-sm-4 d-flex justify-content-end align-items-center" id="webdes">
+			<ul  style='padding-top:25px;color:white'  class="nav nav-tabs" >
+				<li style='display:inline;'><a href='https://twittervideodownloaderx.com' style='text-decoration: none;color:white'>Página de inicio</a>&nbsp;&nbsp;</li>
+	
+				<div class="text-end mb-3">
+					<div class="dropdown d-inline-block">
+						<button class="btn btn-sm btn-outline-light d-flex align-items-center gap-1"
+								type="button"
+								id="langDropdown"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+						<i class="fa-solid fa-video"></i>
+						<span>Descargador de videos</span>
+						</button>
+				
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+							{{toollistele|safe}}
+						</ul>
+					</div>&nbsp;&nbsp;
+				</div>
+				
+				<div class="text-end mb-3">
+					<div class="dropdown d-inline-block">
+						<button class="btn btn-sm btn-outline-light d-flex align-items-center gap-1"
+								type="button"
+								id="langDropdown"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+						<i class="bi bi-globe"></i>
+						<span>🇪🇸 Español</span>
+						</button>
+				
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+							{{langlistele|safe}}
+						</ul>
+					</div>
+				</div>
+			</ul>
+		</div>
+	<div class="col-sm-2" id='langweb' >
+	</div>
+</div>
+<div class="row">
+    <div class="col-md-2 d-none d-md-block">
+    </div> 
+    <div class="col-md-8"  style="border-width:1px;border-style: solid;background-color:#F5F7FA">
+	
+<br />
+		<div id='titleweb' style='text-align:center;color:#2D3E50' >
+			<h1 style='font-family: "Tektur",sans-serif;'>📌 Descargador de Pinterest</h1>
+			 <p class="subtitle">Descarga gratis vídeos (MP4) e imágenes (JPG/PNG) de Pins públicos de Pinterest en línea · Calidad HD original · Sin necesidad de registro</p>
+		</div> 
+		<div id='ad' >
+		</div>
+		<div style='text-align:center'>
+		
+		<input type='text' id='mainsource' style='width:80%;display:inline;color:#2D3E50' placeholder="Introduce el enlace de pinterest.com" >
+		</div>
+		<div style='text-align:center;color:#2D3E50'>
+		Ejemplo de URL: https://www.pinterest.com/pin/1900024838647726/
+		</div>
+		<br/>
+		<div style='text-align:center'>
+		<button type="button" class="btn" id='bigbutton' style='background-color:#FF6B35;color:white'><i class="bi bi-download"></i> Descargar vídeo</button>
+		</div>
+		<br/>
+		
+		<div class="spinner-grow text-primary text-center" role="status" style='display:none;font-size:3em' id='loader'>
+			<span class="visually-hidden">Descargando...</span>
+		</div>
+		
+		<div class="" id='hashshow' style='color:#2D3E50'>
+		</div> 
+		<br />
+		
+		
+	</div>
+	<div class="col-md-2 d-none d-md-block">
+	</div>
+</div>
+<div class="row" >
+	<p>&nbsp;<span>{% csrf_token %}</span></p>
+</div>
+</div>
+
+<div class="row" style='margin-top:3em;background-color:#F5FAFB'>
+	<div class="col-sm-2 d-none d-md-block">
+	</div> 
+	<div class="col-sm-8"  >
+	
+
+		<div class="container">
+		
+		
+		
+		<div class="notice-box">
+			🔒 <strong>Aviso importante:</strong> Esta herramienta <strong>no almacena contenido</strong> y <strong>no solicita permisos de tu cuenta de Pinterest</strong>. Solo analiza <strong>Pins públicos</strong>. No la uses para descargar contenido privado y respeta los derechos de autor y la propiedad intelectual de los creadores.
+		</div>
+		
+		<section>
+			<h2>✨ Tipos de contenido compatibles</h2>
+			<div class="feature-grid">
+			<div class="feature-card">
+				<h4>🎥 Pins de vídeo (Video Pins)</h4>
+				<p>Descarga el archivo MP4 original de los Pins de vídeo de Pinterest, con soporte hasta 1080P (dependiendo de la calidad de subida), sin marcas de agua de la plataforma.</p>
+			</div>
+			<div class="feature-card">
+				<h4>🖼️ Pins de imagen (Image Pins)</h4>
+				<p>Obtén imágenes en alta resolución (JPG/PNG) con un solo clic, conservando la resolución completa, ideal para recopilar inspiración, referencias de diseño o visualización sin conexión.</p>
+			</div>
+			<div class="feature-card">
+				<h4>🔗 Compatible con todos los formatos de enlace</h4>
+				<p>Funciona con enlaces estándar, enlaces cortos (pin.it) y enlaces embebidos. Reconoce automáticamente el tipo de contenido y ofrece opciones de descarga.</p>
+			</div>
+			<div class="feature-card">
+				<h4>⚡ Rápido y seguro en privacidad</h4>
+				<p>El análisis se completa en promedio en 2–4 segundos; no es necesario iniciar sesión en Pinterest en ningún momento, y no recopilamos tu IP ni registros de uso.</p>
+			</div>
+			</div>
+			<p><strong>✅ Compatible con:</strong> Pins de vídeo e imagen de cuentas públicas<br>
+			<strong>❌ No compatible con:</strong> Tableros secretos (Secret Boards), contenido de cuentas privadas, Pins publicitarios y anuncios dinámicos</p>
+		</section>
+
+		<section>
+			<h2>📥 Guía detallada de uso (3 sencillos pasos)</h2>
+			<div class="step-container">
+			<div class="step-card">
+				<h4>Paso 1: Copia el enlace del Pin de Pinterest</h4>
+				<ol>
+				<li>Abre el <a href="https://www.pinterest.com" target="_blank">sitio oficial de Pinterest</a> o la aplicación</li>
+				<li>Encuentra el <strong>Pin público</strong> que deseas descargar (vídeo o imagen)</li>
+				<li>Haz clic en el ícono <strong>“Compartir”</strong> en la esquina inferior derecha → selecciona <strong>“Copiar enlace”</strong><br>
+					Ejemplo de enlace:<br>
+					<code>https://www.pinterest.com/pin/123456789012345678/</code><br>
+					O enlace corto:<br>
+					<code>https://pin.it/Abc123X</code>
+				</li>
+				</ol>
+				<p><strong>💡 Importante:</strong> Solo se pueden descargar <strong>Pins públicos</strong>. Los Pins de tableros secretos o con restricciones no se pueden analizar.</p>
+			</div>
+
+			<div class="step-card">
+				<h4>Paso 2: Pega el enlace y analiza</h4>
+				<ol>
+				<li>Regresa a esta página del descargador</li>
+				<li>Pega el enlace copiado en el cuadro de entrada superior (la función de descarga se integrará aquí en el futuro)</li>
+				<li>Haz clic en el botón <strong>【Analizar contenido】</strong></li>
+				</ol>
+				<p>El sistema, en pocos segundos:<br>
+				• Identificará automáticamente si es vídeo o imagen<br>
+				• Obtendrá el enlace directo al archivo multimedia original en alta calidad<br>
+				• Mostrará una vista previa y las opciones de descarga</p>
+			</div>
+
+			<div class="step-card">
+				<h4>Paso 3: Descarga el contenido en alta calidad</h4>
+				<ul>
+				<li><strong>Pins de vídeo:</strong> haz clic en “Descargar MP4” para guardar el vídeo en alta definición</li>
+				<li><strong>Pins de imagen:</strong> haz clic en “Descargar imagen original” para obtener el archivo JPG/PNG</li>
+				<li>El archivo se guardará automáticamente en la carpeta <strong>“Descargas”</strong> de tu dispositivo</li>
+				</ul>
+				<p><strong>📌 Consejos de uso:</strong></p>
+				<ul>
+				<li>¿Recopilando inspiración de diseño? → Descarga las imágenes originales para crear una biblioteca local</li>
+				<li>¿Guardando tutoriales en vídeo? → Descarga el MP4 para verlo sin conexión</li>
+				<li>¿Planificando contenido? → Guarda múltiples ejemplos de referencia (actualmente solo se admite la descarga de un Pin a la vez)</li>
+				</ul>
+			</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>⚙️ Notas técnicas (para desarrolladores)</h2>
+			<ul>
+			<li>Analiza el JSON-LD y los scripts embebidos de las páginas públicas de Pinterest para extraer la URL original del contenido multimedia.</li>
+			<li>Los vídeos se proporcionan en formato estándar MP4, las imágenes en JPG/PNG original, <strong>sin marcas de agua de Pinterest ni compresión de miniaturas</strong>.</li>
+			<li>Procesa automáticamente redirecciones de enlaces cortos (<code>pin.it</code>) para garantizar compatibilidad con todos los formatos.</li>
+			<li>Todas las solicitudes se procesan a través de un canal seguro, <strong>sin enviar información de identificación del usuario a Pinterest</strong>.</li>
+			<li>Los enlaces directos a los archivos multimedia suelen ser válidos durante varias horas; descárgalos a tiempo.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>⚠️ Términos de uso y política de derechos de autor</h2>
+			<ol>
+			<li><strong>Solo contenido público:</strong> Queda prohibido intentar descargar tableros secretos, Pins restringidos o contenido publicitario.</li>
+			<li><strong>Respeto a la propiedad intelectual:</strong> La mayoría del contenido en Pinterest es creado por terceros. No lo uses para redistribución comercial, venta ni fines que infrinjan derechos de autor.</li>
+			<li><strong>Uso personal únicamente:</strong> Esta herramienta está destinada exclusivamente a recopilar inspiración, estudiar o disfrute personal. No debe usarse para extracción automatizada ni descargas masivas.</li>
+			<li><strong>Exención de responsabilidad:</strong> El usuario asume todos los riesgos legales derivados de un uso inadecuado. Esta plataforma no asume ninguna responsabilidad.</li>
+			</ol>
+		</section>
+
+		<section>
+			<h2>❓ Preguntas frecuentes (FAQ)</h2>
+			<div class="faq-list">
+			<div class="faq-item">
+				<strong>P: ¿Por qué aparece el mensaje “No se pudo obtener el contenido”?</strong><br>
+				Causas posibles: el Pin es privado, el enlace no es válido, el contenido fue eliminado o Pinterest ha restringido temporalmente el acceso público.
+			</div>
+			<div class="faq-item">
+				<strong>P: ¿Se puede descargar un tablero completo (Board)?</strong><br>
+				La versión actual solo admite la descarga de un solo Pin. <strong>La función de descarga masiva está en desarrollo.</strong>
+			</div>
+			<div class="faq-item">
+				<strong>P: ¿La imagen descargada está en resolución original?</strong><br>
+				¡Sí! Proporcionamos la imagen con la resolución máxima disponible en Pinterest, no una miniatura.
+			</div>
+			<div class="faq-item">
+				<strong>P: ¿Cómo copiar el enlace en el móvil?</strong><br>
+				En la aplicación de Pinterest, pulsa “Compartir” → “Copiar enlace”. En algunos dispositivos Android, se recomienda abrir el Pin en Chrome antes de copiar el enlace.
+			</div>
+			<div class="faq-item">
+				<strong>P: ¿Soporta contenido publicitario de Pinterest?</strong><br>
+				No. Los Pins publicitarios suelen tener restricciones adicionales y sus derechos de autor son complejos. Esta herramienta los omite automáticamente.
+			</div>
+			</div>
+		</section>
+
+		<footer>
+		<p>¿Tienes problemas o sugerencias de funcionalidades? ¡Contáctanos!<br>
+		📧 Correo: <a href="{{mailtocontactmail}}">{{contactmail}}</a><br>
+		💻 GitHub: <a href="{{githublink}}" target="_blank">{{githublink}}</a></p>
+		<p style="margin-top: 1.2rem; font-style: italic; color: #666;">
+			Gracias por usar el <strong>Descargador de Pinterest</strong> —<br>
+			Para que la inspiración siempre esté a tu alcance. ✨
+		</p>
+		</footer>
+		
+		
+			<footer class="footer">
+					<p>© {{year_string}} Pinterest Video Downloader. Todos los derechos reservados.</p>
+					<p>Este sitio no tiene vinculación oficial con Pinterest, Inc. | 
+					<a href="/privacy-policy" style="color: #FF4500;">Política de privacidad</a> | 
+					<a href="/terms-of-service" style="color: #FF4500;">Términos de servicio</a> | 
+					<a href="/about-us" style="color: #FF4500;">Sobre nosotros</a> | 
+					<a href="/contact-us" style="color: #FF4500;">Contáctenos</a>
+					</p>
+					<p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+						Esta herramienta es solo para uso personal, de estudio e investigación. El usuario asume toda la responsabilidad legal.
+					</p>
+					<p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
+						La descarga de contenido protegido por derechos de autor puede violar las leyes y regulaciones aplicables. Por favor, respete las leyes locales.
+					</p>
+			</footer>
+	</div>
+
+	</div>
+	<div class="col-sm-2 d-none d-md-block">
+	</div>
+</div>
+</div>
+<script src="/static/jquery.min.js"  crossorigin="anonymous"></script>
+<script src="/static/popper.min.js"  crossorigin="anonymous"></script>
+<script data-ad-client="ca-pub-3339068484857413" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="/static/jquery.lazy.min.js"></script>
+
+<script type="text/javascript" src="/static/shareon.iife.js" defer  init></script>
+<script>
+	$(function() {
+		$('.lazy').Lazy();
+	});
+</script>
+<script type="application/ld+json">
+	{
+	"@context": "http://schema.org/",
+	"@type": "Organization",
+	"url": "https://twittervideodownloaderx.com",
+	"logo": "https://twittervideodownloaderx.com/static/logo.png"
+	}
+</script>
+
+<script>
+function mp3turn(obj){
+	var inputvalue =obj.getAttribute('va');
+	//alert(inputvalue);
+	if (inputvalue==='')
+	{
+		alert('456');
+		return false;
+	}
+	$('#mp3placeholder').empty();
+	var spinner='<span style="font-size:1.5em"><span class="spinner-loader" ></span>';
+	$('#mp3placeholder').append(spinner+'<br />Converting Video to Mp3</span>');
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getmp3', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#mp3placeholder').html('NO result');
+				return;
+				}
+			var mp3filepath=response.mp3filepath;
+			//alert(htimage);
+			$('#mp3placeholder').empty();
+			var intext='';
+			var intext='<a href="/'+mp3filepath+'" target="_blank" class="btn btn-danger">Download Video Mp3</a>';
+			$('#mp3placeholder').html(intext);
+			}
+		else{
+			$('#mp3placeholder').html('<p style="font-size:1.5em">NO result</p>');
+		}
+		}
+	}
+};
+function gifturn(obj){
+	var inputvalue =obj.getAttribute('va');
+	//alert(inputvalue);
+	if (inputvalue==='')
+	{
+		alert('456');
+		return false;
+	}
+	$('#gifplaceholder').empty();
+	var spinner='<span style="font-size:1.5em"><span class="spinner-loader" ></span>';
+	$('#gifplaceholder').append(spinner+'<br />Converting Video to Gif</span>');
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getgif', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#gifplaceholder').html('NO result');
+				return;
+				}
+			var giffilepath=response.giffilepath;
+			//alert(htimage);
+			$('#gifplaceholder').empty();
+			var intext='';
+			var intext='<a href="/'+giffilepath+'" target="_blank" class="btn btn-danger">Download Video GIF</a>';
+			$('#gifplaceholder').html(intext);
+			}
+		else{
+			$('#gifplaceholder').html('<p style="font-size:1.5em">NO result</p>');
+		}
+		}
+	}
+};
+$(document).ready(function() {
+$("#mainsource").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#bigbutton").click();
+    }
+});
+$('#bigbutton').on('click',function(){
+	var inputvalue = $('#mainsource').val();
+	if (inputvalue==='')
+	{
+		return false;
+	}
+	$('#hashshow').empty();
+	var spinner='<div style="text-align:center;"><span style="font-size:1.5em;"><span style="background-color:#007FFF;" class="spinner-loader" ></span>';
+	$('#hashshow').append(spinner+'<br />Descargando video.</span></div>');
+	
+	//document.getElementById("loader").style.display = "block";
+
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getitem_pinterest', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			document.getElementById("loader").style.display = "none";
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#hashshow').html('NO result');
+				return;
+				}
+				
+				
+				
+				var v_thumbnail=encodeURI(response.v_thumbnail);//
+				
+				var v_title=response.v_title;//
+				var v_webpage_url=encodeURI(response.v_webpage_url);
+				var v_duration_string=response.v_duration_string;//
+				
+				//var v_uploader_id=response.v_uploader_id;
+				var v_uploader=response.v_uploader;//
+				//var v_uploader_url=encodeURI(response.v_uploader_url);
+				//var v_view_count=response.v_view_count;
+				//var v_like_count=response.v_like_count;
+				var v_comment_count=response.v_comment_count;
+				var v_repost_count=response.v_repost_count;
+				var v_width=response.v_width;
+				var v_height=response.v_height;
+				
+				var v_upload_date=response.v_upload_date;//
+				var v_ext=response.v_ext;
+				var v_resolution=response.v_resolution;
+				var v_aspect_ratio=response.v_aspect_ratio;
+				var v_des=response.v_des;
+				var v_url=response.v_url;
+				
+				var v_formats = response.formatslist;
+				var v_thumbnails =response.thumbnailslist;
+			
+
+			$('#hashshow').empty();
+			var intext='';
+			var intext=intext+'<div class="row" ><div class="col-sm-6" ><div><b>'+v_title+'</b></div><div><img src="'+v_thumbnail+'"  class="img-fluid" /></div>';
+			
+
+			var intext=intext+'</div><div class="col-sm-6 align-self-end" ><br /><br />';
+			
+			//var intext=intext+'<div><i class="bi bi-cloud-download"></i> <a style="text-decoration:none" href="'+v_url+'">下载视频</a></div>';
+			
+			for (let i = 0; i < v_formats.length; i++) {
+			
+				turl=encodeURI(v_formats[i][0]);
+				tres=v_formats[i][1];
+				// Traducción: Descargar video (resolución ...)
+				var intext=intext+'<div><i class="bi bi-cloud-download"></i> <a style="text-decoration:none" href="'+turl+'">Descargar video (resolución '+tres+')</a></div>';
+			}
+			
+			var intext=intext+'<br />'
+			for (let i = 0; i < v_thumbnails.length; i++) {
+			
+				turl=encodeURI(v_thumbnails[i][0]);
+				tres=v_thumbnails[i][1];
+				// Traducción: Descargar portada (resolución ...)
+				var intext=intext+'<div><i class="bi bi-file-image"></i> <a style="text-decoration:none" href="'+turl+'">Descargar portada (resolución '+tres+')</a></div>';
+			}
+			
+			var intext=intext+'</div></div><hr />';
+	
+			// Sección de información: Título, Enlace, Duración, Autor, Fecha
+			var intext=intext+'<div class="row" ><div class="col-sm-6" ><div><b>Título: </b>'+v_title+'</div><div><b>Enlace web: </b>'+v_webpage_url+'</div><div><b>Duración: </b>'+v_duration_string+'</div><div><b>Subido por: </b>'+v_uploader+'</div><div><b>Fecha de subida: </b>'+v_upload_date+'</div></div>';
+	
+			// Sección técnica: Comentarios, Compartidos, Ancho, Alto, Formato, Resolución, Relación de aspecto
+			var intext=intext+'<div class="col-sm-6" ><div><b>Comentarios: </b>'+v_comment_count+'</div><div><b>Compartidos: </b>'+v_repost_count+'</div><div><b>Ancho: </b>'+v_width+'</div><div><b>Alto: </b>'+v_height+'</div><div><b>Formato de archivo: </b>'+v_ext+'</div><div><b>Resolución: </b>'+v_resolution+'</div><div><b>Relación de aspecto: </b>'+v_aspect_ratio+'</div></div></div>';
+
+			// Descripción
+			var intext=intext+'<div class="row" ><div class="col-sm-12" ><div><b>Descripción del video: </b>'+v_des+'</div></div></div>';
+
+
+			var intext=intext+'<div class="row" >'+'<div class="shareon shadow bg-light bg-gradient"><a class="facebook" data-title="'+v_title+'" ><span  style="font-size:1em">facebook</span></a><a class="linkedin" data-title="'+v_title+'" ><span style="font-size:1em">linkedin</span></a>	<a class="mastodon" data-title="'+v_title+'"><span  style="font-size:1em">mastodon</span></a><a class="messenger" data-fb-app-id="0123456789012345" data-title="'+v_title+'"><span  style="font-size:1em">messenger</span></a><a class="pinterest" data-title="'+v_title+'"><span  style="font-size:1em“>pinterest</span></a><a class="reddit" data-title="'+v_title+'"><span  style="font-size:0.5em">reddit</span></a><a class="telegram" data-title="'+v_title+'"><span  style="font-size:1em">telegram</span></a><a class="twitter" data-title="'+v_title+'"><span  style="font-size:1em“>twitter</span></a><a class="viber" data-title="'+v_title+'"><span  style="font-size:1em">viber</span></a><a class="vkontakte" data-title="'+v_title+'"><span  style="font-size:1em">vkontakte</span></a><a class="whatsapp" data-title="'+v_title+'"><span  style="font-size:1em">whatsapp</span></a></div>';
+			
+			
+			var intext=intext+'</div>';
+			
+			//$('#hashshow').append('<div>'+'<img src="'+htsimage+'" />'+'</div>'+'<p>'+trunttext+'</p>');
+			$('#hashshow').html(intext);
+			}
+		else{
+			document.getElementById("loader").style.display = "none";
+			$('#hashshow').html('<p style="font-size:1.5em">NO result</p>');
+		}
+		}
+	}
+});
+});
+</script>
+<script>
+$(document).ready(function() {
+  $('.droplang').click(function(e) {
+    e.preventDefault();
+    var selectedValue = $(this).data('value');
+	var domainname='https://twittervideodownloaderx.com';
+	if (selectedValue==='en')
+	{
+		window.location=domainname+'/{{baseurlstring}}';
+	}
+	else
+	{
+	window.location=domainname+'/{{baseurlstring}}_'+selectedValue;
+	}
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+  $('.droptool').click(function(e) {
+    e.preventDefault();
+    var selectedtoolValue = $(this).data('value');
+	var domainname='https://twittervideodownloaderx.com';
+	var current_lang='{{lang}}';
+	
+	if (selectedtoolValue==='x_twitter')
+	{
+		if (current_lang==='en')
+			{
+			window.location=domainname;
+			}
+		else
+			{
+			window.location=domainname+'/'+current_lang;
+			}
+	}
+	else
+	{
+		if (current_lang==='en')
+		
+			{
+			window.location=domainname+'/'+selectedtoolValue+'_downloader';
+			}
+		else
+			{
+			window.location=domainname+'/'+selectedtoolValue+'_downloader_'+'{{lang}}';
+			}
+	}
+  });
+});
+</script>
+<script type="text/javascript">
+var sc_project=11698515; 
+var sc_invisible=1; 
+var sc_security="38970939"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+
+<link  rel="stylesheet" href='/static/wait.css' >
+</body>
+</html>

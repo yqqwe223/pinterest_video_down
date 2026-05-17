@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="msvalidate.01" content="5CCC6EE8FF816477D80A4DE459A738F1" />
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="أداة تحميل فيديو Pinterest: يمكنك استخدام أداة تحميل فيديو Pinterest الخاصة بنا لتحميل أي فيديو أو صورة GIF وتحويله إلى MP3 أو GIF. ماذا تنتظر؟ جرب أداة تحميل فيديو Pinterest الآن!">
+<meta name="keywords" content="أداة تحميل فيديو Pinterest">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@twittervideodownloaderx.com">
+<meta name="twitter:title" content="أداة تحميل فيديو Pinterest - احصل على فيديوهات وصور GIF من Pinterest">
+<meta name="twitter:description" content="أداة تحميل فيديو Pinterest: يمكنك استخدام أداة تحميل فيديو Pinterest الخاصة بنا لتحميل أي فيديو أو صورة GIF وتحويله إلى MP3 أو GIF. ماذا تنتظر؟ جرب أداة تحميل فيديو Pinterest الآن!">
+<meta name="twitter:image" content="https://twittervideodownloaderx.com/static/logo.png  ">
+<meta name="twitter:image:alt" content="أداة تحميل فيديو Pinterest - احصل على فيديوهات وصور GIF من Pinterest">
+
+<meta property="og:title" content="أداة تحميل فيديو Pinterest - احصل على فيديوهات وصور GIF من Pinterest" />
+<meta property="og:description" content="أداة تحميل فيديو Pinterest: يمكنك استخدام أداة تحميل فيديو Pinterest الخاصة بنا لتحميل أي فيديو أو صورة GIF وتحويله إلى MP3 أو GIF. ماذا تنتظر؟ جرب أداة تحميل فيديو Pinterest الآن!" />
+<meta property="og:image" content="https://twittervideodownloaderx.com/static/logo.png  " />
+<meta property="og:image:alt" content="أداة تحميل فيديو Pinterest - احصل على فيديوهات وصور GIF من Pinterest" />
+
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css    ">
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css    " />
+<link href="https://gcore.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css  " rel="stylesheet">
+<script src="https://gcore.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js  "></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css  " rel="stylesheet">
+
+<link rel="stylesheet" href="/static/wait.css" >
+<link rel="stylesheet" href="/static/shareon.min.css" >
+<link rel="preconnect" href="https://fonts.googleapis.com  ">
+<link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+
+{{websiteSchema|safe}}
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<link rel="icon" href="{% static 'favicon.ico' %}">
+<title>أداة تحميل فيديو Pinterest - احصل على فيديوهات وصور GIF من Pinterest</title>
+</head>
+<body>
+
+
+	
+  <style>
+    /* ================== المتغيرات العامة وإعادة التعيين ================== */
+    :root {
+      --pinterest-red: #e60023;
+      --bg-light: #fafafa;
+      --text-dark: #212121;
+      --text-light: #5f6368;
+      --card-bg: #ffffff;
+      --border-color: #e0e0e0;
+      --shadow: 0 2px 10px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+		:root {
+		--pin-red:  #E60023;
+		--pin-red-dark: #BD081C;
+		--pin-gray: #F5F5F5;
+		--pin-white: #FFFFFF;
+		}
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      padding: 5px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ================== أنماط عامة ================== */
+    a {
+      color: var(--pinterest-red);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.94em;
+      color: var(--pinterest-red);
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      color: var(--pinterest-red);
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+
+    .notice-box {
+      background: #fff0f2;
+      border-left: 4px solid var(--pinterest-red);
+      padding: 1.2rem;
+      margin: 1.5rem auto 2rem;
+      border-radius: 8px;
+      font-size: 0.98rem;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      color: #333;
+    }
+
+    h4 {
+      font-size: 1.15rem;
+      color: var(--pinterest-red);
+      margin: 1.4rem 0 0.8rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      padding-right: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* ================== مكونات التخطيط ================== */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 1.4rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    .step-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin: 1.5rem 0;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      padding: 1.3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0 1rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 2rem;
+    }
+
+        .footer {
+            background: #212529;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #FF4500;
+            text-decoration: none;
+        }
+
+
+    /* ================== نقاط التوقف للاستجابة ================== */
+    @media (min-width: 768px) {
+      body {
+        padding: 5px;
+      }
+      h1 {
+        font-size: 2.7rem;
+      }
+      .subtitle {
+        font-size: 1.35rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        padding: 5px;
+      }
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        padding: 0 8px;
+      }
+      .notice-box {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+      .step-card, .feature-card, .faq-item {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+<div class="container-fluid  text-break">
+
+
+<div class="row" style="background:linear-gradient(135deg,  var(--pin-red) 0%,  var(--pin-red-dark) 40%, var(--pin-gray) 100%);">
+<div class="row" >
+    <div class="col-sm-2 d-none d-sm-block" >
+    </div>
+	<div class="col-sm-4 align-self-end"  >
+		<a href='https://twittervideodownloaderx.com' style="text-decoration:none"><img  data-src='/static/logo.png' src='/static/pix.jpg' class="img-fluid lazy align-text-bottom" alt='شعار الموقع'><span  class='align-text-bottom text-wrap fs-3' style="font-style:italic;color:white;font-family:'Tektur',sans-serif;">Twittervideodownloaderx</span></a>
+    </div>
+	
+	
+	<div class="col-sm-4 d-flex justify-content-end align-items-center" id="webdes">
+			<ul  style='padding-top:25px;color:white'  class="nav nav-tabs" >
+				<li style='display:inline;'><a href='https://twittervideodownloaderx.com' style='text-decoration: none;color:white'>الرئيسية</a>&nbsp;&nbsp;</li>
+	
+				<div class="text-end mb-3">
+					<div class="dropdown d-inline-block">
+						<button class="btn btn-sm btn-outline-light d-flex align-items-center gap-1"
+								type="button"
+								id="langDropdown"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+						<i class="fa-solid fa-video"></i>
+						<span>أدوات تحميل الفيديو</span>
+						</button>
+				
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+							{{toollistele|safe}}
+						</ul>
+					</div>&nbsp;&nbsp;
+				</div>
+				
+				<div class="text-end mb-3">
+					<div class="dropdown d-inline-block">
+						<button class="btn btn-sm btn-outline-light d-flex align-items-center gap-1"
+								type="button"
+								id="langDropdown"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+						<i class="bi bi-globe"></i>
+						<span>🇸🇦 العربية</span>
+						</button>
+				
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+							{{langlistele|safe}}
+						</ul>
+					</div>
+				</div>
+			</ul>
+		</div>
+	<div class="col-sm-2" id='langweb' >
+	</div>
+</div>
+<div class="row" >
+    <div class="col-md-2 d-none d-md-block">
+    </div> 
+    <div class="col-md-8"  style="border-width:1px;border-style: solid;background-color:#F5F7FA">
+		
+		
+		<br />
+		<div id='titleweb'  style='text-align:center;color:#2D3E50' >
+			<h1 style='font-family: "Tektur",sans-serif;'>📌 محمّل Pinterest</h1>
+			 <p class="subtitle">حمّل مجاناً عبر الإنترنت فيديوهات (MP4) وصور (JPG/PNG) من دبابيس Pinterest العامة · جودة عالية أصلية · بدون تسجيل دخول</p>
+		</div> 
+		<div id='ad' >
+		</div>
+		<div style='text-align:center'>
+		
+		<input type='text' id='mainsource' style='width:80%;display:inline;color:#2D3E50' placeholder="الصق رابط pinterest.com" >
+		</div>
+		<div style='text-align:center;color:#2D3E50'>
+		رابط مثال : https://www.pinterest.com/pin/1900024838647726
+		</div>
+		<br/>
+		<div style='text-align:center'>
+		<button type="button" class="btn" id='bigbutton' style='background-color:#FF6B35;color:white'><i class="bi bi-download"></i> تحميل الفيديو</button>
+		</div>
+		<br/>
+		
+		<div class="spinner-grow text-primary text-center" role="status" style='display:none;font-size:3em' id='loader'>
+			<span class="visually-hidden">جاري التحميل...</span>
+		</div>
+		
+		<div class=""  id='hashshow' style='color:#2D3E50'>
+		</div> 
+		<br />
+		
+		
+	</div>
+	<div class="col-md-2 d-none d-md-block">
+	</div>
+</div>
+<div class="row" >
+	<p>&nbsp;<span>{% csrf_token %}</span></p>
+</div>
+</div>
+
+<div class="row" style='margin-top:3em;background-color:#F5FAFB'>
+	<div class="col-sm-2 d-none d-md-block">
+	</div> 
+	<div class="col-sm-8"  >
+	
+	<div class="container">
+
+		
+		<div class="notice-box">
+			🔒 <strong>ملاحظة هامة:</strong> هذه الأداة <strong>لا تخزن المحتوى</strong>، <strong>لا تطلب صلاحيات حساب Pinterest</strong>، وتقوم بتحليل <strong>الدبابيس العامة</strong> فقط. لا تستخدمها لتحميل المحتوى الخاص، واحترم حقوق النشر والملكية الفكرية للمبدعين.
+		</div>
+
+
+		<section>
+		<h2>✨ أنواع المحتوى المدعومة</h2>
+		<div class="feature-grid">
+			<div class="feature-card">
+			<h4>🎥 دبابيس الفيديو (Video Pins)</h4>
+			<p>قم بتحميل ملفات MP4 الأصلية لدبابيس فيديو Pinterest، بدعم يصل إلى 1080P (حسب جودة الرفع)، بدون علامات مائية.</p>
+			</div>
+			<div class="feature-card">
+			<h4>🖼️ دبابيس الصور (Image Pins)</h4>
+			<p>احصل على صورة عالية الدقة (JPG/PNG) بنقرة واحدة، مع الحفاظ على الدقة الكاملة، مثالية لجمع الإلهام أو المراجع التصميمية أو العرض دون اتصال.</p>
+			</div>
+			<div class="feature-card">
+			<h4>🔗 يدعم جميع تنسيقات الروابط</h4>
+			<p>متوافق مع الروابط القياسية، الروابط المختصرة (pin.it)، الروابط المضمنة، يتعرف تلقائياً على نوع المحتوى ويقدم خيارات التحميل.</p>
+			</div>
+			<div class="feature-card">
+			<h4>⚡ سريع وآمن للخصوصية</h4>
+			<p>يكمل التحليل خلال 2-4 ثوانٍ في المتوسط؛ لا يتطلب تسجيل دخول إلى Pinterest خلال العملية، ولا يجمع IP أو سجلات الاستخدام.</p>
+			</div>
+		</div>
+		<p><strong>✅ مدعوم:</strong> دبابيس الفيديو والصور لحسابات عامة<br>
+		<strong>❌ غير مدعوم:</strong> اللوحات الخاصة (Secret Boards)، محتوى الحسابات الخاصة، الدبابيس الإعلانية، محتوى الإعلانات المتحركة</p>
+		</section>
+
+		<section>
+		<h2>📥 شرح مفصل للاستخدام (ثلاث خطوات فقط)</h2>
+		<div class="step-container">
+			<div class="step-card">
+			<h4>الخطوة 1: انسخ رابط دبوس Pinterest</h4>
+			<ol>
+				<li>افتح <a href="https://www.pinterest.com" target="_blank">موقع Pinterest الرسمي</a> أو التطبيق</li>
+				<li>ابحث عن <strong>دبوس عام</strong> (فيديو أو صورة) تريد تحميله</li>
+				<li>انقر على أيقونة <strong>"مشاركة"</strong> في الزاوية اليمنى السفلى → اختر <strong>"نسخ الرابط"</strong><br>
+				رابط مثال:<br>
+				<code>https://www.pinterest.com/pin/123456789012345678/</code><br>
+				أو رابط مختصر:<br>
+				<code>https://pin.it/Abc123X</code>
+				</li>
+			</ol>
+			<p><strong>💡 مهم:</strong> يمكن تحميل <strong>الدبابيس العامة</strong> فقط. لا يمكن تحليل المحتوى الخاص أو المقيد.</p>
+			</div>
+
+			<div class="step-card">
+			<h4>الخطوة 2: الصق الرابط وقم بالتحليل</h4>
+			<ol>
+				<li>ارجع إلى صفحة المحمّل هذه</li>
+				<li>الصق الرابط الذي نسخته في مربع الإدخال بالأعلى (سيتم دمج وظيفة التحميل هنا مستقبلاً)</li>
+				<li>انقر على زر <strong>【تحليل المحتوى】</strong></li>
+			</ol>
+			<p>سيتعرف النظام خلال ثوانٍ على:<br>
+			• ما إذا كان محتوىً فيديو أم صورة<br>
+			• الحصول على رابط الميديا الأصلي عالي الدقة<br>
+			• عرض معاينة وخيارات التحميل</p>
+			</div>
+	
+			<div class="step-card">
+			<h4>الخطوة 3: قم بتحميل المحتوى عالي الدقة</h4>
+			<ul>
+				<li><strong>دبوس فيديو:</strong> انقر على "تحميل MP4" لحفظ الفيديو عالي الدقة</li>
+				<li><strong>دبوس صورة:</strong> انقر على "تحميل الصورة الأصلية" للحصول على ملف JPG/PNG</li>
+				<li>سيتم حفظ الملف تلقائياً في <strong>مجلد "التنزيلات"</strong> بالجهاز</li>
+			</ul>
+			<p><strong>📌 اقتراحات للاستخدام:</strong></p>
+			<ul>
+				<li>تجمع إلهاماً تصميمياً؟ → حمّل الصور الأصلية لإنشاء مكتبة مواد محلية</li>
+				<li>تحفظ فيديوهات تعليمية؟ → حمّل MP4 للمشاهدة دون اتصال</li>
+				<li>تقوم بالتخطيط للمحتوى؟ → حفظ المراجع بالجملة (حالياً يدعم تحميل دبوس واحد)</li>
+			</ul>
+			</div>
+		</div>
+		</section>
+	
+		<section>
+		<h2>⚙️ شرح تقني (مرجع للمطورين)</h2>
+		<ul>
+			<li>يتم استخراج روابط الميديا الأصلية من خلال تحليل JSON-LD ونصوص التضمين في صفحات Pinterest العامة.</li>
+			<li>يتم تقديم الفيديو بتنسيق MP4 قياسي، والصورة بتنسيق JPG/PNG الأصلي، <strong>بدون علامات مائية من Pinterest أو ضغط للصور المصغرة</strong>.</li>
+			<li>معالجة تلقائية لإعادة التوجيه للروابط المختصرة (<code>pin.it</code>)، لضمان توافق جميع تنسيقات الروابط.</li>
+			<li>جميع الطلبات تتم عبر قنوات آمنة، <strong>بدون إرسال معلومات هوية المستخدم إلى Pinterest</strong>.</li>
+			<li>عادة ما تكون روابط الميديا المباشرة صالحة لعدة ساعات، يرجى التحميل في الوقت المناسب.</li>
+		</ul>
+		</section>
+	
+		<section>
+		<h2>⚠️ شروط الاستخدام وسياسة حقوق النشر</h2>
+		<ol>
+			<li><strong>للمحتوى العام فقط:</strong> يُمنع محاولة تحميل اللوحات الخاصة أو الدبابيس المقيدة أو المحتوى الإعلاني.</li>
+			<li><strong>احترم الملكية الفكرية:</strong> غالبية محتوى Pinterest هو إبداع لأطراف ثالثة، لا تستخدمه لإعادة التوزيع التجاري أو البيع أو الأغراض المتعدية على الحقوق.</li>
+			<li><strong>مبدأ الاستخدام الشخصي:</strong> هذه الأداة مخصصة فقط لجمع الإلهام أو التعلم أو الاستمتاع الشخصي، ولا يجوز استخدامها للزحف الآلي أو التحميل المجمّع.</li>
+			<li><strong>إخلاء المسؤولية:</strong> يتحمل المستخدم المسؤولية القانونية الناجمة عن الاستخدام غير السليم، ولا تتحمل هذه المنصة أي مسؤولية.</li>
+		</ol>
+		</section>
+	
+		<section>
+		<h2>❓ الأسئلة الشائعة (FAQ)</h2>
+		<div class="faq-list">
+			<div class="faq-item">
+			<strong>س: لماذا تظهر رسالة "تعذر الحصول على المحتوى"؟</strong><br>
+			الأسباب المحتملة: الدبوس خاص، الرابط غير صالح، تم حذف المحتوى، أو Pinterest تمنع الوصول العام مؤقتاً.
+			</div>
+			<div class="faq-item">
+			<strong>س: هل يمكن تحميل لوحة (Board) كاملة؟</strong><br>
+			الإصدار الحالي يدعم تحميل دبوس واحد فقط. <strong>وظيفة التحميل المجمّع قيد التخطيط</strong>.
+			</div>
+			<div class="faq-item">
+			<strong>س: هل الصور المحملة هي بالدقة الأصلية؟</strong><br>
+			نعم! نحن نقدم الصورة الأصلية بأعلى دقة متاحة مخزنة في Pinterest، وليست صورة مصغرة.
+			</div>
+			<div class="faq-item">
+			<strong>س: كيف أنسخ الرابط على الهاتف؟</strong><br>
+			في تطبيق Pinterest، انقر على "مشاركة" → "نسخ الرابط". يُنصح على بعض أجهزة أندرويد بفتح الدبوس في Chrome ثم النسخ.
+			</div>
+			<div class="faq-item">
+			<strong>س: هل يدعم محتوى إعلانات Pinterest؟</strong><br>
+			غير مدعوم. عادة ما تكون الدبابيس الإعلانية مقيدة بقيود إضافية، وتعقد حقوق النشر الخاصة بها، تتخطى هذه الأداة هذا النوع من المحتوى تلقائياً.
+			</div>
+		</div>
+		</section>
+
+		<footer>
+		<p>واجهت مشكلة أو لديك اقتراح لوظيفة؟ مرحباً بك للتواصل معنا!<br>
+		📧 البريد الإلكتروني: <a href="{{mailtocontactmail}}">{{contactmail}}</a><br>
+		💻 GitHub: <a href="{{githublink}}" target="_blank">{{githublink}}</a></p>
+		<p style="margin-top: 1.2rem; font-style: italic; color: #666;">
+			شكراً لاستخدامك <strong>محمّل Pinterest</strong> ——<br>
+			اجعل الإلهام، في متناول يدك. ✨
+		</p>
+		</footer>
+		
+ 		<footer class="footer">
+				<p>© {{year_string}} أداة تحميل فيديو Pinterest. جميع الحقوق محفوظة.</p>
+				<p>هذا الموقع ليس مرتبطاً رسمياً بـ pinterest, Inc. | 
+				<a href="/privacy-policy" style="color: #FF4500;">سياسة الخصوصية</a> | 
+				<a href="/terms-of-service" style="color: #FF4500;">شروط الخدمة</a> | 
+				<a href="/about-us" style="color: #FF4500;">من نحن</a>| 
+				<a href="/contact-us" style="color: #FF4500;">اتصل بنا</a>
+				</p>
+				<p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+					هذه الأداة مخصصة للاستخدام الشخصي والدراسي والبحثي فقط، ويجب على المستخدم تحمل كافة المسؤوليات القانونية بنفسه
+				</p>
+				<p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
+					قد ينتهك تحميل المحتوى المحمي بحقوق النشر القوانين واللوائح ذات الصلة، يرجى الالتزام بالقوانين المحلية
+				</p>
+		</footer>
+		
+		
+
+	</div>
+
+	</div>
+	<div class="col-sm-2 d-none d-md-block">
+	</div>
+</div>
+</div>
+<script src="/static/jquery.min.js"  crossorigin="anonymous"></script>
+<script src="/static/popper.min.js"  crossorigin="anonymous"></script>
+
+<script data-ad-client="ca-pub-3339068484857413" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="/static/jquery.lazy.min.js"></script>
+
+<script type="text/javascript" src="/static/shareon.iife.js" defer  init></script>
+<script>
+	$(function() {
+		$('.lazy').Lazy();
+	});
+</script>
+<script type="application/ld+json">
+	{
+	"@context": "http://schema.org/",
+	"@type": "Organization",
+	"url": "https://twittervideodownloaderx.com",
+	"logo": "https://twittervideodownloaderx.com/static/logo.png"
+	}
+</script>
+
+<script>
+function mp3turn(obj){
+	var inputvalue =obj.getAttribute('va');
+	//alert(inputvalue);
+	if (inputvalue==='')
+	{
+		alert('456');
+		return false;
+	}
+	$('#mp3placeholder').empty();
+	var spinner='<span style="font-size:1.5em"><span class="spinner-loader" ></span>';
+	$('#mp3placeholder').append(spinner+'<br />جاري تحويل الفيديو إلى Mp3</span>');
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getmp3', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#mp3placeholder').html('لا توجد نتائج');
+				return;
+				}
+			var mp3filepath=response.mp3filepath;
+			//alert(htimage);
+			$('#mp3placeholder').empty();
+			var intext='';
+			var intext='<a href="/'+mp3filepath+'" target="_blank" class="btn btn-danger">تحميل MP3 للفيديو</a>';
+			$('#mp3placeholder').html(intext);
+			}
+		else{
+			$('#mp3placeholder').html('<p style="font-size:1.5em">لا توجد نتائج</p>');
+		}
+		}
+	}
+};
+function gifturn(obj){
+	var inputvalue =obj.getAttribute('va');
+	//alert(inputvalue);
+	if (inputvalue==='')
+	{
+		alert('456');
+		return false;
+	}
+	$('#gifplaceholder').empty();
+	var spinner='<span style="font-size:1.5em"><span class="spinner-loader" ></span>';
+	$('#gifplaceholder').append(spinner+'<br />جاري تحويل الفيديو إلى Gif</span>');
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getgif', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#gifplaceholder').html('لا توجد نتائج');
+				return;
+				}
+			var giffilepath=response.giffilepath;
+			//alert(htimage);
+			$('#gifplaceholder').empty();
+			var intext='';
+			var intext='<a href="/'+giffilepath+'" target="_blank" class="btn btn-danger">تحميل GIF للفيديو</a>';
+			$('#gifplaceholder').html(intext);
+			}
+		else{
+			$('#gifplaceholder').html('<p style="font-size:1.5em">لا توجد نتائج</p>');
+		}
+		}
+	}
+};
+$(document).ready(function() {
+$("#mainsource").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#bigbutton").click();
+    }
+});
+$('#bigbutton').on('click',function(){
+	var inputvalue = $('#mainsource').val();
+	if (inputvalue==='')
+	{
+		return false;
+	}
+	$('#hashshow').empty();
+	var spinner='<div style="text-align:center;"><span style="font-size:1.5em;"><span style="background-color:#007FFF;" class="spinner-loader" ></span>';
+	$('#hashshow').append(spinner+'<br />جاري تحميل الفيديو</span></div>');
+	
+	//document.getElementById("loader").style.display = "block";
+
+	var xhr = new XMLHttpRequest();
+	var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+	xhr.open('post', '/getitem_pinterest', true);
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	xhr.send('inputvalue='+inputvalue);
+	xhr.onreadystatechange = processresponse;
+	function processresponse() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			// Everything is good, the response was received.
+		if (xhr.status === 200) {
+			// Perfect!
+			document.getElementById("loader").style.display = "none";
+			var rstring=xhr.responseText;
+			//alert(xhr.responseText);
+			var response = JSON.parse(rstring);
+			var statue=response.statue;
+			if (statue=='NO'){
+				$('#hashshow').html('لا توجد نتائج');
+				return;
+				}
+				
+				var v_thumbnail=encodeURI(response.v_thumbnail);//
+				
+				var v_title=response.v_title;//
+				var v_webpage_url=encodeURI(response.v_webpage_url);
+				var v_duration_string=response.v_duration_string;//
+				
+				//var v_uploader_id=response.v_uploader_id;
+				var v_uploader=response.v_uploader;//
+				//var v_uploader_url=encodeURI(response.v_uploader_url);
+				//var v_view_count=response.v_view_count;
+				//var v_like_count=response.v_like_count;
+				var v_comment_count=response.v_comment_count;
+				var v_repost_count=response.v_repost_count;
+				var v_width=response.v_width;
+				var v_height=response.v_height;
+				
+				var v_upload_date=response.v_upload_date;//
+				var v_ext=response.v_ext;
+				var v_resolution=response.v_resolution;
+				var v_aspect_ratio=response.v_aspect_ratio;
+				var v_des=response.v_des;
+				var v_url=response.v_url;
+				
+				var v_formats = response.formatslist;
+				var v_thumbnails =response.thumbnailslist;
+			
+
+			$('#hashshow').empty();
+			var intext='';
+			var intext=intext+'<div class="row" ><div class="col-sm-6" ><div><b>'+v_title+'</b></div><div><img src="'+v_thumbnail+'"  class="img-fluid" /></div>';
+			
+
+			var intext=intext+'</div><div class="col-sm-6 align-self-end" ><br /><br />';
+			
+			//var intext=intext+'<div><i class="bi bi-cloud-download"></i> <a style="text-decoration:none" href="'+v_url+'">تحميل الفيديو</a></div>';
+			
+			for (let i = 0; i < v_formats.length; i++) {
+			
+				turl=encodeURI(v_formats[i][0]);
+				tres=v_formats[i][1];
+				var intext=intext+'<div><i class="bi bi-cloud-download"></i> <a style="text-decoration:none" href="'+turl+'">تحميل الفيديو (دقة '+tres+')</a></div>';
+			}
+			
+			var intext=intext+'<br />'
+			for (let i = 0; i < v_thumbnails.length; i++) {
+			
+				turl=encodeURI(v_thumbnails[i][0]);
+				tres=v_thumbnails[i][1];
+				var intext=intext+'<div><i class="bi bi-file-image"></i> <a style="text-decoration:none" href="'+turl+'">تحميل الغلاف (دقة '+tres+')</a></div>';
+			}
+			
+			var intext=intext+'</div></div><hr />';
+	
+			var intext=intext+'<div class="row" ><div class="col-sm-6" ><div><b>العنوان: </b>'+v_title+'</div><div><b>رابط الصفحة: </b>'+v_webpage_url+'</div><div><b>المدة: </b>'+v_duration_string+'</div><div><b>الرافع: </b>'+v_uploader+'</div><div><b>تاريخ الرفع: </b>'+v_upload_date+'</div></div>';
+	
+			var intext=intext+'<div class="col-sm-6" ><div><b>عدد التعليقات: </b>'+v_comment_count+'</div><div><b>عدد إعادة النشر: </b>'+v_repost_count+'</div><div><b>العرض: </b>'+v_width+'</div><div><b>الارتفاع: </b>'+v_height+'</div><div><b>تنسيق الملف: </b>'+v_ext+'</div><div><b>الدقة: </b>'+v_resolution+'</div><div><b>نسبة الأبعاد: </b>'+v_aspect_ratio+'</div></div></div>';
+
+			var intext=intext+'<div class="row" ><div class="col-sm-12" ><div><b>وصف الفيديو: </b>'+v_des+'</div></div></div>';
+
+
+			var intext=intext+'<div class="row" >'+'<div class="shareon shadow bg-light bg-gradient"><a class="facebook" data-title="'+v_title+'" ><span  style="font-size:1em">فيسبوك</span></a><a class="linkedin" data-title="'+v_title+'" ><span style="font-size:1em">لينكد إن</span></a>	<a class="mastodon" data-title="'+v_title+'"><span  style="font-size:1em">ماستودون</span></a><a class="messenger" data-fb-app-id="0123456789012345" data-title="'+v_title+'"><span  style="font-size:1em">ماسنجر</span></a><a class="pinterest" data-title="'+v_title+'"><span  style="font-size:1em">بينتيريست</span></a><a class="reddit" data-title="'+v_title+'"><span  style="font-size:0.5em">ريديت</span></a><a class="telegram" data-title="'+v_title+'"><span  style="font-size:1em">تلغرام</span></a><a class="twitter" data-title="'+v_title+'"><span  style="font-size:1em">تويتر</span></a><a class="viber" data-title="'+v_title+'"><span  style="font-size:1em">فايبر</span></a><a class="vkontakte" data-title="'+v_title+'"><span  style="font-size:1em">فكونتاكتي</span></a><a class="whatsapp" data-title="'+v_title+'"><span  style="font-size:1em">واتساب</span></a></div>';
+			
+			
+			var intext=intext+'</div>';
+			
+			//$('#hashshow').append('<div>'+'<img src="'+htsimage+'" />'+'</div>'+'<p>'+trunttext+'</p>');
+			$('#hashshow').html(intext);
+			}
+		else{
+			document.getElementById("loader").style.display = "none";
+			$('#hashshow').html('<p style="font-size:1.5em">لا توجد نتائج</p>');
+		}
+		}
+	}
+});
+});
+</script>
+<script>
+$(document).ready(function() {
+  $('.droplang').click(function(e) {
+    e.preventDefault();
+    var selectedValue = $(this).data('value');
+	var domainname='https://twittervideodownloaderx.com';
+	if (selectedValue==='en')
+	{
+		window.location=domainname+'/{{baseurlstring}}';
+	}
+	else
+	{
+	window.location=domainname+'/{{baseurlstring}}_'+selectedValue;
+	}
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+  $('.droptool').click(function(e) {
+    e.preventDefault();
+    var selectedtoolValue = $(this).data('value');
+	var domainname='https://twittervideodownloaderx.com';
+	var current_lang='{{lang}}';
+	
+	if (selectedtoolValue==='x_twitter')
+	{
+		if (current_lang==='en')
+			{
+			window.location=domainname;
+			}
+		else
+			{
+			window.location=domainname+'/'+current_lang;
+			}
+	}
+	else
+	{
+		if (current_lang==='en')
+		
+			{
+			window.location=domainname+'/'+selectedtoolValue+'_downloader';
+			}
+		else
+			{
+			window.location=domainname+'/'+selectedtoolValue+'_downloader_'+'{{lang}}';
+			}
+	}
+  });
+});
+</script>
+<script type="text/javascript">
+var sc_project=11698515; 
+var sc_invisible=1; 
+var sc_security="38970939"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+
+<link  rel="stylesheet" href='/static/wait.css' >
+</body>
+</html>
